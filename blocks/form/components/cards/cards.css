@@ -16,11 +16,6 @@
   transition: all 0.2s ease;
 }
 
-/* Hover effect */
-.card:hover {
-  border-color: #007aff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
 
 /* Selected card */
 .card.selected {
