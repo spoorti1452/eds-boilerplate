@@ -1,19 +1,46 @@
-/* Cards component styles */
-  /* Add your custom styles here */
-.status {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+/* Card container */
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 10px;
+}
+
+/* Individual card */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.card:hover {
+  border-color: #007aff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Selected card */
+.card.selected {
+  border: 2px solid #007aff;
+  background-color: #f0f8ff;
+}
+
+/* Card content */
+.card-title {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
+  margin-bottom: 6px;
 }
 
-.status.success {
-  color: #2e7d32; /* green */
-}
-
-.status .icon {
+.card-description {
   font-size: 14px;
-  display: inline-flex;
-  align-items: center;
+  color: #666;
+}
+
+/* Hide default radio */
+.cards-wrapper input[type="radio"] {
+  display: none;
 }
