@@ -1,0 +1,40 @@
+/* File-upload component styles */
+  /* Add your custom styles here */
+.file-upload-wrapper {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+  background: #fafafa;
+}
+
+.file-upload-wrapper:hover {
+  border-color: #1473e6;
+  background: #f0f8ff;
+}
+
+.file-upload-input {
+  display: none;
+}
+
+.file-upload-text {
+  font-size: 14px;
+  color: #666;
+}
+
+.file-preview {
+  margin-top: 10px;
+}
+
+.file-preview img {
+  max-width: 100px;
+  border-radius: 6px;
+}
+
+.file-name {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #333;
+}
