@@ -520,7 +520,7 @@ main .form .button-wrapper button {
 }
 
 main .form button[name="form_button1775799596691"] {
-    background-color: orange !important;
+    background-color: red !important;
 }
 
 main .form .button-wrapper button:hover {
