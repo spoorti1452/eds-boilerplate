@@ -56,7 +56,50 @@ function maskMobileNumber(mobileNumber) {
   return ` ${'*'.repeat(5)}${value.substring(5)}`;
 }
 
+
+/* global guideBridge */
+let otpCountdownInterval;
+
+function startOtpCountdown() {
+  const timerField = guideBridge.resolveNode('resend_otp_timer');
+  const expiredField = guideBridge.resolveNode('otpExpired');
+
+  let seconds = 21;
+
+  if (otpCountdownInterval) {
+    clearInterval(otpCountdownInterval);
+  }
+
+  if (timerField) {
+    timerField.value = `Resend OTP in : ${seconds} secs`;
+  }
+
+  if (expiredField) {
+    expiredField.value = 'false';
+  }
+
+  otpCountdownInterval = setInterval(() => {
+    seconds--;
+
+    if (seconds > 0) {
+      if (timerField) {
+        timerField.value = `Resend OTP in : ${seconds} secs`;
+      }
+    } else {
+      clearInterval(otpCountdownInterval);
+
+      if (timerField) {
+        timerField.value = 'Resend OTP';
+      }
+
+      if (expiredField) {
+        expiredField.value = 'true';
+      }
+    }
+  }, 1000);
+}
+
 // eslint-disable-next-line import/prefer-default-export
 export {
-  getFullName, days, submitFormArrayToString, maskMobileNumber,
+  getFullName, days, submitFormArrayToString, maskMobileNumber,startOtpCountdown,
 };
