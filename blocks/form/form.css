@@ -519,7 +519,7 @@ main .form .button-wrapper button {
     cursor:pointer
 }
 
-main .form .button-wrapper #button-80cee136c9{
+main .form button[name="form_button1775799596691"] {
     background-color: red !important;
 }
 
